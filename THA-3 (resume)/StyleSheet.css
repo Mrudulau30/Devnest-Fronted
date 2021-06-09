@@ -1,0 +1,99 @@
+fieldset
+{
+   width: 900px;
+    border: 2px solid rgb(48, 35, 44);
+    margin: auto;
+    background-color: rgb(216, 237, 245);
+  
+}
+.left
+{
+    width: 350px;
+    background-color: rgb(162, 205, 243);
+}
+
+legend{
+  
+    font-size:xx-large;
+    
+     text-align: center;
+     
+     padding: 10px 10px 10px 10px;
+     
+ }
+ .top
+ {
+     font-size: large;
+     margin-left: 350px;
+ }
+
+ .contact
+ {
+    font-family:Helvetica,monospace;
+    
+    margin-left: 30PX;
+     margin-top: 20px;
+    
+ }
+ .contact1
+ {
+     margin-left: 70px;
+    font-family:Helvetica,'Caveat', cursive; 
+   
+    color: rgb(250, 30, 23);
+    font-weight: bolder;
+    font-size: 18px;
+
+ }
+ .summary1
+ {
+    font-family:Helvetica,'Caveat', cursive; 
+}
+.right
+{
+    font-family:Helvetica,'Caveat', cursive;
+    
+    color: rgb(250, 30, 23);
+ position: absolute;
+    top: 90px;
+    margin-left: 550px;
+}
+.projects
+{
+    font-family:Helvetica,'Caveat', cursive;
+    position: absolute;
+    top:130px;
+   margin-left: 350px;
+}
+.right1
+{
+    font-family:Helvetica,'Caveat', cursive;
+    position: absolute;  
+    margin-left: 550px;
+    top: 490px;
+    color: rgb(250, 30, 23);
+}
+.end
+{
+    font-family:Helvetica,'Caveat', cursive;
+    position: absolute;  
+    margin-left: 350px;
+    top: 540px;
+      
+}
+.end1
+{
+    font-family:Helvetica,'Caveat', cursive;
+    position: absolute;  
+    margin-left: 520px;
+    top: 740px; 
+    color: rgb(250, 30, 23); 
+}
+.end2
+{
+    font-family:Helvetica,'Caveat', cursive;
+    position: absolute;  
+    margin-left: 350px;
+    top: 790px; 
+
+}
