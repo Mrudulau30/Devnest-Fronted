@@ -1,61 +1,47 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>THA Day-5</title>
-<style>
-input[type="button"]
-{
-background-color:#88a1bb;
-color:rgb(19, 12, 12);
-width:75px;
-height:75px;
-font-size:22px;
-}
-input[type="text"]
-{
-background-color:rgb(255, 255, 255);
-color:black;
-border:soloid black 2px;
-width:310px;
-height:35px;
-font-size:20px;
-}
-</style>
-</head>
-<body>
-<center><div><div><form name="calculator">
-<table border="2">
-<tr>
-<td colspan="4">
-<input type="text" name="display" id="display" size="29"  disabled>
-</td>
-</tr>
-<tr>
-      	<td><input type="button" name="one" value="1" onclick="calculator.display.value +='1' "></td>
-	<td><input type="button" name="two" value="2" onclick="calculator.display.value +='2' "></td>
-	<td><input type="button" name="three" value="3" onclick="calculator.display.value +='3' "></td>
-	<td><input type="button" class="operator"  name="plus" value="+" onclick="calculator.display.value +='+' "></td>  
-</tr>
-<tr>
-      	<td><input type="button" name="four" value="4" onclick="calculator.display.value +='4' "></td>
-	<td><input type="button" name="five" value="5" onclick="calculator.display.value +='5' "></td>
-	<td><input type="button" name="six" value="6" onclick="calculator.display.value +='6' "></td>
-	<td><input type="button" class="operator" name="minus" value="-" onclick="calculator.display.value +='-' "></td>  
-</tr>
-<tr>
-      	<td><input type="button" name="seven" value="7" onclick="calculator.display.value +='7' "></td>
-	<td><input type="button" name="eight" value="8" onclick="calculator.display.value +='8' "></td>
-	<td><input type="button" name="nine" value="9" onclick="calculator.display.value +='9' "></td>
-	<td><input type="button" class="operator" name="multiply" value="*" onclick="calculator.display.value +='*' "></td>  
-</tr>
-<tr>
-      	<td><input type="button"  id="clear"  name="clear" value="c" onclick="calculator.display.value =' ' "></td>
-	<td><input type="button" name="zero" value="0" onclick="calculator.display.value +='0' "></td>
-	<td><input type="button" name="doit" value="=" onclick="calculator.display.value =eval(calculator.display.value)"></td>
-	<td><input type="button" name="div" value="/" onclick="calculator.display.value +='/' "></td>  
-</tr>
-</table>
+<html lang="en">
 
-</form></div></div></center>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day5 tha</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="cal">
+ 
+</head>
+
+
+<body>
+	<form >
+	<div class="form">
+		<br>
+		<br>
+   <div class="top">
+	   Enter the 1st No : <input type=text TYPE="number" size=10 id="num1" required>
+	   <br>
+	   <br>
+	   <br>
+	 Enter the 2nd No : <input type=text size=10 TYPE="number" id="num2" required><br><br><br>
+	   <input type="button" style="background-color: rgb(0, 0, 0); height: 40px; width: 60px; color: aliceblue;" value="SUM" onclick="ADD()">&nbsp&nbsp&nbsp&nbsp
+	   <input type="button" style="background-color: rgb(0, 0, 0); height: 40px; width: 60px; color: aliceblue;" value="SUB" onclick="SUB()">&nbsp&nbsp&nbsp&nbsp
+	   <input type="button"  style="background-color:rgb(0, 0, 0); height: 40px; width: 60px; color: aliceblue;" value="MUL" onclick="MUL()">&nbsp&nbsp&nbsp&nbsp
+	   <input type="button" style="background-color: rgb(0, 0, 0); height: 40px; width: 60px; color: aliceblue;" value="DIV" onclick="DIV()"><br>
+	   <br><br><br>
+	   <script src="script.js" > </script> 
+	   </div>
+
+	   <div class="bottom">
+	   ANSWER:<span id="ans"></div><br>
+		<br>
+		<button type="reset" style="height: 40px;width: 90px;">CLEAR</button><BR><BR><BR>
+    </div>
+</div>
+     
+</form>
 </body>
+
+
+  
+
 </html>
