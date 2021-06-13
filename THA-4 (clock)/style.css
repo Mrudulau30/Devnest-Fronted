@@ -1,0 +1,92 @@
+#outer-circle {
+    background:  #e02121;
+    border-radius: 50%;
+    height: 430px;
+    width: 430px;
+    position: relative;
+    /* 
+     Child elements with absolute positioning will be 
+     positioned relative to this div 
+    */
+    margin: auto;
+    margin-top: 9%;
+     
+  }
+  #inner-circle {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    height: 340px;
+    width: 340px;
+    /*
+     Put top edge and left edge in the center
+    */
+    top: 50%;
+    left: 50%;
+    margin: -170px 0px 0px -170px;
+    
+    /* 
+     Offset the position correctly with
+     minus half of the width and minus half of the height 
+    */
+    box-shadow: inset 1px 1px 14px 1px #85829b;
+
+  }
+
+  .minutes-container, .hours-container, .seconds-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .hours {
+    background: #000;
+    height: 20%;
+    left: 48.75%;
+    position: absolute;
+    top: 30%;
+    transform-origin: 50% 100%;
+    width: 2%;
+  }
+  .minutes {
+    background: #000;
+    height: 40%;
+    left: 49%;
+    position: absolute;
+    top: 10%;
+    transform-origin: 50% 100%;
+    width: 2%;
+  }
+  .seconds {
+    background: #000;
+    height: 45%;
+    left: 49.5%;
+    position: absolute;
+    top: 14%;
+    transform-origin: 50% 80%;
+    width: 1%;
+    z-index: 8;
+  }
+  @keyframes rotate {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+  .hours-container {
+    animation: rotate 43200s infinite linear;
+  }
+  .minutes-container {
+    animation: rotate 3600s infinite linear;
+  }
+  .seconds-container {
+    animation: rotate 60s infinite linear;
+  }
+  .minutes-container {
+    animation: rotate 3600s infinite steps(60);
+  }
+  .seconds-container {
+    animation: rotate 60s infinite steps(60);
+  }
+  
+  
