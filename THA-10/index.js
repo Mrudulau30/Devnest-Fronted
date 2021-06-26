@@ -37,7 +37,9 @@ function flipcards(){
    {
        frontcard.classList.add("disabled");
        backcard.classList.add("disabled");
+      
 }
+
    
    else{
        screenlock=true;
@@ -62,6 +64,11 @@ function flipcards(){
           let pos=Math.floor(Math.random()*16);
           card1.style.order=pos;
       });
+  }
+
+  function hidden(){
+      frontcard.style.visibility="hidden", frontcard=null;
+      backcard.style.visibility="hidden";
   }
 
 cards.forEach(card1 => card1.addEventListener('click',flipcards));
