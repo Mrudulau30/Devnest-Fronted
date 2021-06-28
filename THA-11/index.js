@@ -9,4 +9,14 @@ function countTimer(){
     document.getElementById("timer").innerHTML= minute+"&nbsp"+":"+"&nbsp"+second;
 }
 
+//fetch
+fetch("question.json")
+.then(function(que){
+  return que.json();
+})
+.catch(function(err){
+  console.log(err);
+})
+var contaier=document.getElementById("data");
+
 
