@@ -1,7 +1,7 @@
 
 
 .canva{
-    border:1px solid rgb(241, 93, 93);
+    border:1px solid rgb(241, 104, 104);
      display: grid;
      grid-template-columns: repeat(6,100px);
      grid-template-rows: repeat(6,60px);
