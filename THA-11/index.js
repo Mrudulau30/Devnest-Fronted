@@ -5,7 +5,7 @@ let quizQuestion = [
       "B" :"Sardar Vallabhbhai Patel" ,
       "C": "Jawaharlal Nehru" ,
       "D": "Govind Ballabh Pant",
-      "ans":"Sardar Vallabhbhai Patel"
+      "ans":2
   },
   {  
       "que":"Who is the father of geometry?",
@@ -13,15 +13,15 @@ let quizQuestion = [
       "B":"Euclid",
       "C":"Pythagoras",
       "D":" Kepler",
-      "ans":"Euclid"
+      "ans":2
   },
   {
-      "que":"Who is popularly called as the Iron Man of India?",
-      "A":" Subhash Chandra Bose" ,
-      "B" :"Sardar Vallabhbhai Patel" ,
-      "C": "Jawaharlal Nehru" ,
-      "D": "Govind Ballabh Pant",
-      "ans":"Sardar Vallabhbhai Patel"
+      "que":"HTML use for",
+      "A":" To hack NASA" ,
+      "B" :"To create webpages" ,
+      "C": "To create android apps" ,
+      "D": "I don't know what is HTML is",
+      "ans":2
   
   },
   {
@@ -30,15 +30,15 @@ let quizQuestion = [
       "B" :"For it's size" ,
       "C": "For it's no. of malls" ,
       "D": "For Infyosis",
-      "ans":"For it's wooden toys"
+      "ans":1
   },
   {
-      "que":"Who is popularly called as the Iron Man of India?",
-      "A":" Subhash Chandra Bose" ,
-      "B" :"Sardar Vallabhbhai Patel" ,
-      "C": "Jawaharlal Nehru" ,
-      "D": "Govind Ballabh Pant",
-      "ans":"Sardar Vallabhbhai Patel"
+      "que":"2+2 ?",
+      "A":" 4" ,
+      "B" :"22" ,
+      "C": "2+2" ,
+      "D": "0",
+      "ans":1
   },
   {
       "que":"Who invented the slogan GO CORONA GO ?",
@@ -46,7 +46,7 @@ let quizQuestion = [
       "B" :"Ramdas Athawale" ,
       "C": "Arvind Kejriwal" ,
       "D": "Narendra Modi",
-      "ans":"Ramdas Athawale"
+      "ans":2
   },
   {
       "que":"What is India's national language?",
@@ -54,7 +54,7 @@ let quizQuestion = [
       "B" :"Hindi" ,
       "C": "English" ,
       "D": "Punjabi",
-      "ans":"Hindi"
+      "ans":2
   
   },
   {
@@ -63,7 +63,7 @@ let quizQuestion = [
       "B" :"Kalidas" ,
       "C": "Aryabhatta" ,
       "D": "Mahatma Gandhi",
-      "ans":"Aryabhatta"
+      "ans":3
   },
   {
       "que":"Which tale of India is the most famous?",
@@ -71,15 +71,15 @@ let quizQuestion = [
       "B" :"Jataka tales" ,
       "C": "Don" ,
       "D": "Tarak Mehta Ka Ulta Chashma",
-      "ans":"Mahabarat"
+      "ans":1
   },
   {
-      "que":"Which diamond is taken from India and is the world's most precious diamond today?",
-      "A":"Rhine blue" ,
-      "B" :"Kohinoor Diamond" ,
-      "C": "Blue stone" ,
-      "D": "Shanti Diamond",
-      "ans":"Kohinoor Diamond"
+      "que":"JS stands for?",
+      "A":"Jaherila Sharbat" ,
+      "B" :"Janhavi Shukla" ,
+      "C": "JavaScript" ,
+      "D": "None",
+      "ans":3
   }
   ]
 
@@ -116,18 +116,50 @@ const a3=document.querySelector('#ans3');
 const a4=document.querySelector('#ans4');
 
 
-const index = 0;
-
-const start = () => {
+let index = 0;
+let lastindex=10
+let score =0;
+let start = () => {
   // console.log("hello");
   // console.log(index);
  
-  const list=quizQuestion[index];
+  let list=quizQuestion[index];
   
   q1.innerHTML=list.que
-  a1.innerHTML=list.A
   a2.innerHTML=list.B
+  a1.innerHTML=list.A
+  
   a3.innerHTML=list.C
   a4.innerHTML=list.D
+ 
+
 }
 start();
+
+const nextQuestion = () => {
+    index+=1;
+    if(index===lastindex){
+        alert("its end");
+        console.log(score);
+        return;
+    }
+    else{
+    start();
+    }
+}
+let data;
+function checkAnswer( data){
+    let list1=quizQuestion[index];
+    // console.log(list1.ans);
+    //  console.log(data);
+    
+if(data===(list1.ans)){
+    
+score+=1;
+
+}
+else{
+   alert("false"); 
+   data.classList.remove("onClick");
+}
+}

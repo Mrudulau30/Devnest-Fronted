@@ -15,16 +15,19 @@
         <img src="2.jpg" style="height: 80px; width: 150px;"></img>
         <div id="timer">  </div>
     </div>
-    <div class="body" style="align-self: center;">
+    <div class="correct">CORRECT<img src="correct.jpg"></div>
+    <div class="body" >
       <div class="data">
         
         <div class="question"> here come the question</div>
-        <div class="answer1"  id="ans1" onclick="check();" >answer 1</div>
-        <div class="answer1"  id="ans2" onclick="check();">answer 2</div>
-        <div class="answer1"  id="ans3" onclick="check();">answer 3</div>
-        <div class="answer1"  id="ans4" onclick="check();">answer 4</div>
+        <div class="answer1"  id="ans1" onClick="checkAnswer(1);" data-info="1">answer 1</div>
+        <div class="answer1"  id="ans2" onClick="checkAnswer(2);" data-info="1">answer 2</div>
+        <div class="answer1"  id="ans3" onClick="checkAnswer(3);" data-info="1">answer 3</div>
+        <div class="answer1"  id="ans4" onClick="checkAnswer(4);" data-info="1">answer 4</div>
       </div>
+    
     </div>
+    <div class="arrow" ><img src="arrow-right.svg" onclick="nextQuestion();"></div>
     <script src="index.js"></script>
   </body>
 </html>

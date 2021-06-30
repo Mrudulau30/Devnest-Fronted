@@ -35,8 +35,9 @@ function flipcards(){
 
    if(frontcard.dataset.info==backcard.dataset.info)
    {
-       frontcard.classList.add("disabled");
-       backcard.classList.add("disabled");
+       frontcard.classList.remove('click',flipcards);
+       backcard.classList.add('click',flipcards);
+       hideCard();
       
 }
 
@@ -53,6 +54,14 @@ function flipcards(){
   /* console.log(count);*/
    
    }
+
+   function hideCard() {
+    setTimeout(() => {
+        frontCard.classList.add('hide-card');
+        backCard.classList.add('hide-card');
+    }, 1500);
+}
+
 
    const reset= function (){
        [iscardflipped,screenlock]=[false,false];
