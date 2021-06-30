@@ -1,86 +1,83 @@
-let quizQuestion = [
+const quizQuestion = [
   {
-      "que":"Who is popularly called as the Iron Man of India?",
-      "A":" Subhash Chandra Bose" ,
-      "B" :"Sardar Vallabhbhai Patel" ,
-      "C": "Jawaharlal Nehru" ,
-      "D": "Govind Ballabh Pant",
-      "ans":2
+      que:"Who is popularly called as the Iron Man of India?",
+      answer:[{text:' Subhash Chandra Bose',correct:false},
+             {text:'Sardar Vallabhbhai Patel',correct:true}, 
+             {text:' Jawaharlal Nehru',correct:false},
+            {text:'Govind Ballabh Pant',correct:false}]
+    
   },
   {  
       "que":"Who is the father of geometry?",
-      "A":"Aristotle",
-      "B":"Euclid",
-      "C":"Pythagoras",
-      "D":" Kepler",
-      "ans":2
+      answer:[
+          {text:'Aristotle', correct:false},
+          {text:'Euclid', correct:true},
+          {text:'Pythagoras', correct:false},
+          {text:'AKeple', correct:false},
+      ]
+     
   },
   {
       "que":"HTML use for",
-      "A":" To hack NASA" ,
-      "B" :"To create webpages" ,
-      "C": "To create android apps" ,
-      "D": "I don't know what is HTML is",
-      "ans":2
+      answer:[
+          {text:'To hack NASA', correct:false},
+          {text:'To create webpages', correct:false},
+          {text:'To create android apps', correct:false},
+          {text:'I dont know what is HTML is', correct:false},
+      ]
+     
   
-  },
-  {
-      "que":"Why is Karnataka famous in India?",
-      "A":"For it's wooden toys" ,
-      "B" :"For it's size" ,
-      "C": "For it's no. of malls" ,
-      "D": "For Infyosis",
-      "ans":1
-  },
-  {
-      "que":"2+2 ?",
-      "A":" 4" ,
-      "B" :"22" ,
-      "C": "2+2" ,
-      "D": "0",
-      "ans":1
-  },
-  {
-      "que":"Who invented the slogan GO CORONA GO ?",
-      "A":" Rahul Gandhi" ,
-      "B" :"Ramdas Athawale" ,
-      "C": "Arvind Kejriwal" ,
-      "D": "Narendra Modi",
-      "ans":2
-  },
-  {
-      "que":"What is India's national language?",
-      "A":" Tamil" ,
-      "B" :"Hindi" ,
-      "C": "English" ,
-      "D": "Punjabi",
-      "ans":2
-  
-  },
-  {
-      "que":"Who in India explained that the Earth was round?",
-      "A":"Ashoka" ,
-      "B" :"Kalidas" ,
-      "C": "Aryabhatta" ,
-      "D": "Mahatma Gandhi",
-      "ans":3
-  },
-  {
-      "que":"Which tale of India is the most famous?",
-      "A":"Mahabarat" ,
-      "B" :"Jataka tales" ,
-      "C": "Don" ,
-      "D": "Tarak Mehta Ka Ulta Chashma",
-      "ans":1
-  },
-  {
-      "que":"JS stands for?",
-      "A":"Jaherila Sharbat" ,
-      "B" :"Janhavi Shukla" ,
-      "C": "JavaScript" ,
-      "D": "None",
-      "ans":3
   }
+  
+//   {
+//       "que":"2+2 ?",
+//       "A":" 4" ,
+//       "B" :"22" ,
+//       "C": "2+2" ,
+//       "D": "0",
+//       "ans":1
+//   },
+//   {
+//       "que":"Who invented the slogan GO CORONA GO ?",
+//       "A":" Rahul Gandhi" ,
+//       "B" :"Ramdas Athawale" ,
+//       "C": "Arvind Kejriwal" ,
+//       "D": "Narendra Modi",
+//       "ans":2
+//   },
+//   {
+//       "que":"What is India's national language?",
+//       "A":" Tamil" ,
+//       "B" :"Hindi" ,
+//       "C": "English" ,
+//       "D": "Punjabi",
+//       "ans":2
+  
+//   },
+//   {
+//       "que":"Who in India explained that the Earth was round?",
+//       "A":"Ashoka" ,
+//       "B" :"Kalidas" ,
+//       "C": "Aryabhatta" ,
+//       "D": "Mahatma Gandhi",
+//       "ans":3
+//   },
+//   {
+//       "que":"Which tale of India is the most famous?",
+//       "A":"Mahabarat" ,
+//       "B" :"Jataka tales" ,
+//       "C": "Don" ,
+//       "D": "Tarak Mehta Ka Ulta Chashma",
+//       "ans":1
+//   },
+//   {
+//       "que":"JS stands for?",
+//       "A":"Jaherila Sharbat" ,
+//       "B" :"Janhavi Shukla" ,
+//       "C": "JavaScript" ,
+//       "D": "None",
+//       "ans":3
+//   }
   ]
 
 
@@ -109,57 +106,78 @@ function countTimer(){
 //   console.log(err);
 // })
 
-const q1=document.querySelector('.question');
-const a1=document.querySelector('#ans1');
-const a2=document.querySelector('#ans2');
-const a3=document.querySelector('#ans3');
-const a4=document.querySelector('#ans4');
+const startButton  = document.getElementById('start')
+const nextButton  = document.getElementById('next')
+const question=document.getElementById('question-container');
+const que1=document.getElementById('question')
+const ans1=document.getElementById('answer-buttons')
+let shuffleQuesion, currentQuestion;
 
 
-let index = 0;
-let lastindex=10
-let score =0;
-let start = () => {
-  // console.log("hello");
-  // console.log(index);
- 
-  let list=quizQuestion[index];
-  
-  q1.innerHTML=list.que
-  a2.innerHTML=list.B
-  a1.innerHTML=list.A
-  
-  a3.innerHTML=list.C
-  a4.innerHTML=list.D
- 
+startButton.addEventListener('click',startGame)
+
+function startGame(){
+
+ console.log('started')
+ startButton.classList.add('hide')
+ shuffleQuesion=quizQuestion.sort(() => Math.random - 0.5)
+ currentQuestion=0
+ question.classList.remove('hide')
+ nextQuestion()
 
 }
-start();
+nextButton.addEventListener('click' , () =>{
+    currentQuestion++;
+    nextQuestion()
+})
+function nextQuestion(){
+    restate()
+ showQuestion(shuffleQuesion[currentQuestion])
+}
 
-const nextQuestion = () => {
-    index+=1;
-    if(index===lastindex){
-        alert("its end");
-        console.log(score);
-        return;
+function  showQuestion(quizQuestion){
+ que1.innerText = quizQuestion.que
+ quizQuestion.answer.forEach(answer =>{
+     const button=document.createElement('button')
+     button.innerText=answer.text
+     button.classList.add('btn')
+     if(answer.correct){
+         button.dataset.correct=answer.correct
+     }
+     button.addEventListener('click',answer)
+     ans1.appendChild(button)
+ })
+}
+
+function restate()
+{   clearStatusClass(document.body)
+    nextButton.classList.add('hide')
+    while(ans1.firstChild){
+        ans1.removeChild(ans1.firstChild)
+    }
+}
+function answer(e){
+ const select=e.target
+ const correct=select.dataset.correct
+ setstatus(document.body,correct)
+ Array.from(ans1.children).forEach(button =>{
+     setstatus(button,button.dataset.correct)
+ } )
+}
+
+function setstatus(element,correct){
+
+    clearStatusClass(element)
+    if(correct){
+        element.classList.add('correct')
+
     }
     else{
-    start();
+        element.classList.add('wrong')
     }
-}
-let data;
-function checkAnswer( data){
-    let list1=quizQuestion[index];
-    // console.log(list1.ans);
-    //  console.log(data);
-    
-if(data===(list1.ans)){
-    
-score+=1;
 
 }
-else{
-   alert("false"); 
-   data.classList.remove("onClick");
-}
+function clearStatusClass(element){
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
 }

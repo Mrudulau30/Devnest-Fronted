@@ -7,6 +7,8 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="index.js"></script>
+    
   </head>
   <body>
      <div class="nav">
@@ -15,19 +17,25 @@
         <img src="2.jpg" style="height: 80px; width: 150px;"></img>
         <div id="timer">  </div>
     </div>
-    <div class="correct">CORRECT<img src="correct.jpg"></div>
-    <div class="body" >
-      <div class="data">
-        
-        <div class="question"> here come the question</div>
-        <div class="answer1"  id="ans1" onClick="checkAnswer(1);" data-info="1">answer 1</div>
-        <div class="answer1"  id="ans2" onClick="checkAnswer(2);" data-info="1">answer 2</div>
-        <div class="answer1"  id="ans3" onClick="checkAnswer(3);" data-info="1">answer 3</div>
-        <div class="answer1"  id="ans4" onClick="checkAnswer(4);" data-info="1">answer 4</div>
-      </div>
+    <div class="body">
     
+    <div class="container">
+      <div id="question-container" class="hide">
+      <div id="question">Questions</div>
+      <div id="answer-buttons" class="btn-grid">
+      <button class="btn ">Answer 1</button>
+      <button class="btn ">Answer 2</button>
+      <button class="btn">Answer 3</button>
+      <button class="btn">Answer 4</button>
     </div>
-    <div class="arrow" ><img src="arrow-right.svg" onclick="nextQuestion();"></div>
-    <script src="index.js"></script>
+  </div>
+      <div class="control">
+         <button id="start" class="start-btn btn">Start</button>
+         <button id="next" class="hide" class="start-btn btn" class="hide1" >Next</button>
+      </div>
+</div></div>
+    
+    
+    
   </body>
 </html>
