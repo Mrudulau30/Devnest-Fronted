@@ -1,13 +1,15 @@
-import Card from './Components/card';
-import Chess from './Components/chessboard';
-import ".style.css"
+import Card from './card'
+import Chess from './chessboard';
+import "./style.css"
 
 function App(){
     return(
         <div className="wrapper">
     <Card />
-    <Chess />
+   <div class="chessb">
+    <Chess /></div>
     </div>
+   
 
     );
 }
