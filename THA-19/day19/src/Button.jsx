@@ -1,5 +1,5 @@
-import React ,{useState} from 'react'
-import styled from 'styled-components'
+import React ,{useState} from 'react';
+import styled from 'styled-components' ;
 
 
 function Button() {
@@ -10,17 +10,17 @@ function Button() {
 }
 
 const Container=styled.button`
- width:10vw;
- height:5vh;
- border-radius:10px;
-border:none;
-background-color:indigo;
-color:white;
-font-size:1.8rem;
 cursor:pointer;
-&:hover{
-    background-color:yellowgreen
-}
+ width:8vw;
+ height:15vh;
+ border-radius:10px;
+ margin:10px;
+border:none;
+background-color:#C197D2;
+color:black;
+font-size:2.2rem;
+cursor:pointer;
+};
 `
 
 export default Button;
