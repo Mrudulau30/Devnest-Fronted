@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    margin-top:7%;
+    margin-left: 7%;
+    text-align: center;
+    font-size: 30px;
+    height: 500px;
+    min-height:300px;
+    border: 1px solid black;
+    width: 480px;
+    border-radius: 20px;
+   
+    
+}
+.container:hover{
+    cursor: pointer;
+    transform: translate(50px);
+    transition: 500ms linear;
+    background-color: rgb(232, 238, 238);
+}
+ img{
+    width: 450px;
+}
+.wrapper{
+    display: flex;
+    
+    justify-content: space-around;
+}
+
+.black {
+    background-color: black;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .white {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+  }
+  .chess {
+    width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    box-shadow: 0 0 0 30px black;
+  }
+  .chessb{
+      margin-top: 8%;
+  }
