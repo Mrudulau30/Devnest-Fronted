@@ -1,5 +1,6 @@
 
 import './App.css';
+import './index.css';
 import Card from "react-bootstrap/Card";
 import Button from 'react-bootstrap/Button';
 import "tailwindcss/tailwind.css"
@@ -30,18 +31,24 @@ function App(props) {
   //     </p>
   //   </div>
   // </div>
+//  bootstrap
+<div className="main">
+  
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of the
+      card's content.
+    </p>
+    <button type="button" class="btn btn-primary">Button</button>
+  </div>
+</div>
 
-  <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.5TcbzDOg62mitEnfi5ExjgHaE8?w=255&h=180&c=7&o=5&dpr=1.25&pid=1.7" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
+
+
+
+</div>
   );
 }
 
