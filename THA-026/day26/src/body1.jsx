@@ -13,7 +13,7 @@ const Body1=()=>{
             }}
           />
           <input
-            type="text"
+            type="mail"
             placeholder="admin@gmail.com"
             onChange={(e) => {
               dispatch(changeMail(e.target.value));

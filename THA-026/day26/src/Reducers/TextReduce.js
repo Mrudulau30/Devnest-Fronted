@@ -5,6 +5,6 @@ const textReducer =(state="",action)=>{
             return action.text;
         }
         
-    
+    return state;
 };
 export default textReducer;

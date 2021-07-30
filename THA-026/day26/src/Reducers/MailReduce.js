@@ -4,5 +4,6 @@ const mailReducer =(state=" ",action)=>{
         console.log("mail change");
         return action.text;
     }
+    return state;
 };
 export default mailReducer;
