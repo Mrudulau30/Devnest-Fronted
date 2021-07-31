@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-
-import { useSelector } from 'react-redux';
-
+import React, { useState } from 'react';
 import './App.css';
-import Body from './body.jsx';
-import Body1 from './body1.jsx';
+import Input from './Input';
+import Display from './Display';
 
 function App() {
-  return (
-    
-    <div className="center1">
-      <div className="App">
-        <h1>Started with Redux 🎇</h1>
-      </div>
-      <div className="center">
-        <Body />
-        <Body1 />
-    </div>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<h1>Hello World 🔥</h1>
+			<Input />
+			<Display />
+		</div>
+	);
 }
 
 export default App;
