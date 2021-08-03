@@ -2,70 +2,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import {useState,useEffect} from "react";
+import Form from "./components/form";
+import WeatherCard from "./components/weatherCard"
 function App() {
  
-  const[place,setPlace]=useState("");
-  const[placedata,setPlacedata]=useState({});
-  const updatePlaceData=()=>{
-      fetch(`http://api.weatherapi.com/v1/current.json?key=cab8dbdf1e584c87932114154210208&q=${place}`)
-      .then(res=>res.json())
-      .then((data)=>{
-        console.log(data.city);
-        setPlacedata(data);
-      });
-    
-  }
+
   
   return (
      <div className="App">
-     <div className="container">
-       <div className="row">
-         <div className="col-16 form">
-           <input type="text" placeholder="eg:Mumbai" value={place} onChange={(e) =>{
-           setPlace(e.target.value);
-           }
-           }></input>
-           <button className="btn btn-primary" onClick={updatePlaceData}> Check</button>
-           {/* {place} */}
-         </div>
-         </div>
-         </div>
-         <div className="offset-md-4 col-20">
-           <div className="card">
-            
-             {placedata.location ? 
-             (<div > 
-               <img src={placedata.current.condition.icon} alt="" />
-               <div className="temp">{placedata.current.temp_c}°</div>
-               <div className="data2">{placedata.current.condition.text}</div>
-               <div className="data1">{placedata.location.name}</div>
-               <div className="container extra">
-                 <div className="row">
-                    <div className="col"> 
-                    <div className="title">Wind Now</div>
-                    <div className="title_data"> {placedata.current.wind_kph}<span className="unit">km</span></div>
-                    </div>
-                    <div className="col">
-                    <div className="title">Humidity</div>
-                    <div className="title_data">{placedata.current.humidity}<span className="unit">%</span></div>
-                    </div>
-                    <div className="col">
-                    <div className="title">Precipitation</div>
-                    <div className="title_data">{placedata.current.precip_in}<span className="unit">%</span></div>
-                    </div>
-                 </div>
-               </div>
-               </div>
-              
-              )
-             :
-             (<h1>Enter valid city name</h1>)}
-           </div>
-
-
+     
+        <Form />
+        <WeatherCard />
         
-       
-     </div>
+         
     </div>
   );
 }
