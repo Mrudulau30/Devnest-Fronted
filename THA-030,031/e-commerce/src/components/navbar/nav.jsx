@@ -1,28 +1,23 @@
-import React from 'react'
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import "./nav.css"
-import {useDispatch,useSelector} from "react-redux"
+import React from 'react';
 
-import {NavLink} from "react-router-dom"
-const ContentCutIcon = createSvgIcon(
-    <path d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3z" />,
-    "ContentCut"
-  );
-function Header() {
-   const dispatch=useDispatch()
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './nav.css'
+export const Nav=()=>{
     return (
-        <div className="header">
-            <h1>fakeStore Cart</h1>
-            <div className="icons">
-
-           <NavLink to="/wishlist" className="wishIcon"> <FavoriteIcon className="icon"/></NavLink>  
-              <ShoppingCartIcon className="icon2" onClick={()=>dispatch(toggleCart())}/>
-            </div>
-           
-        </div>
-    )
+        <div className="nav">
+         <span className="name">eBazar</span>
+         <span className="search"> 
+         <input
+            type="text"
+            id="header-search"
+            placeholder="Search products"
+            name="s" 
+        />
+         </span>
+         <div className="right">
+         <span class="heart"></span>
+         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor" fill="none"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+         </div>
+    </div>
+    );
 }
-
-export default Header
