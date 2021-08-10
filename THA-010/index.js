@@ -7,7 +7,7 @@ let frontcard,backcard;
 let count=0, moves=0;
 let screenlock=false;
 
-
+let a=0;
 
 function flipcards(){
     if (screenlock) return;

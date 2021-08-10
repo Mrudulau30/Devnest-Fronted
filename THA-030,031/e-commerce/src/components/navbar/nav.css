@@ -83,6 +83,7 @@ body{
       width: 50px;
       margin-left: 30px;
       cursor: pointer;
+      color: aliceblue;
   }
   .right{
       display: flex;
