@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import "./Carts.css"
-import CloseIcon from '@material-ui/icons/Close';
+
 import Cart from './Cart';
 import {useDispatch,useSelector} from "react-redux"
 
@@ -16,7 +16,7 @@ function Carts() {
         <div className={`carts ${val && "active"}` }>
              <div className="topPart">
                  <h1>Your items</h1>
-                 <CloseIcon  className="xicon" onClick={()=>dispatch(toggleCart())}/>
+                 {/* <CloseIcon  className="xicon" onClick={()=>dispatch(toggleCart())}/> */}
                 
              </div>
              <div className="cartItem">

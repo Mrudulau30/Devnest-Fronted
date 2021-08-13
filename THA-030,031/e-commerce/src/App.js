@@ -11,7 +11,7 @@ function App() {
     <div className="App">
     
      <Nav />
-     <Carts/>
+     <Carts />
   
     </div>
   
